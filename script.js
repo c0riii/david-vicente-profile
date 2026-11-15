@@ -24,61 +24,50 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () 
 
 applyTheme(localStorage.getItem('dvp-theme') || 'system');
 
-// ── Section navigation (fixed arrows, always visible in viewport) ──
-const chevronDown = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>`;
-const chevronUp   = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>`;
+// ── Section navigation ──
+var SECTIONS = ['inicio', 'perfil', 'trayectoria', 'experiencia', 'stack', 'certificados', 'contacto'];
+var curIdx = 0;
+var navUp   = document.getElementById('navUp');
+var navDown = document.getElementById('navDown');
 
-const navSections = Array.from(document.querySelectorAll(
-  '#inicio, #perfil, #trayectoria, #experiencia, #stack, #certificados, #contacto'
-));
-
-const btnUp   = document.createElement('button');
-const btnDown = document.createElement('button');
-btnUp.className   = 'nav-fixed nav-fixed--up';
-btnDown.className = 'nav-fixed nav-fixed--down';
-btnUp.setAttribute('aria-label', 'Sección anterior');
-btnDown.setAttribute('aria-label', 'Siguiente sección');
-btnUp.innerHTML   = chevronUp;
-btnDown.innerHTML = chevronDown;
-document.body.appendChild(btnUp);
-document.body.appendChild(btnDown);
-
-let curIdx = 0;
-
-function syncArrows() {
-  btnUp.style.opacity       = curIdx > 0 ? '1' : '0';
-  btnUp.style.pointerEvents = curIdx > 0 ? 'auto' : 'none';
-  btnDown.style.opacity       = curIdx < navSections.length - 1 ? '1' : '0';
-  btnDown.style.pointerEvents = curIdx < navSections.length - 1 ? 'auto' : 'none';
+function syncNav() {
+  navUp.classList.toggle('hidden', curIdx === 0);
+  navDown.classList.toggle('hidden', curIdx === SECTIONS.length - 1);
 }
 
-// Track which section is most visible
-const secObs = new IntersectionObserver(entries => {
-  entries.forEach(e => {
+function goTo(idx) {
+  if (idx < 0 || idx >= SECTIONS.length) return;
+  curIdx = idx;
+  var target = document.getElementById(SECTIONS[curIdx]);
+  if (target) window.scrollTo({ top: target.offsetTop - 52, behavior: 'smooth' });
+  syncNav();
+}
+
+navDown.addEventListener('click', function() { goTo(curIdx + 1); });
+navUp.addEventListener('click',   function() { goTo(curIdx - 1); });
+
+// Track active section with IntersectionObserver
+var secEls = SECTIONS.map(function(id) { return document.getElementById(id); }).filter(Boolean);
+var secObs = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) {
     if (e.isIntersecting) {
-      curIdx = navSections.indexOf(e.target);
-      syncArrows();
+      var i = secEls.indexOf(e.target);
+      if (i !== -1) { curIdx = i; syncNav(); }
     }
   });
 }, { threshold: 0.4 });
+secEls.forEach(function(s) { secObs.observe(s); });
 
-navSections.forEach(s => secObs.observe(s));
-
-btnUp.addEventListener('click', () => {
-  if (curIdx > 0) navSections[curIdx - 1].scrollIntoView({ behavior: 'smooth', block: 'start' });
-});
-btnDown.addEventListener('click', () => {
-  if (curIdx < navSections.length - 1) navSections[curIdx + 1].scrollIntoView({ behavior: 'smooth', block: 'start' });
-});
-
-syncArrows();
+syncNav();
 
 // ── Fade-in on scroll ──
-const observer = new IntersectionObserver(
-  entries => entries.forEach(e => {
-    if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
-  }),
+var fadeObs = new IntersectionObserver(
+  function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) { e.target.classList.add('visible'); fadeObs.unobserve(e.target); }
+    });
+  },
   { threshold: 0.07 }
 );
 document.querySelectorAll('.section-inner, .hero > div, .job, .tl-item, .cards article')
-  .forEach(el => { el.classList.add('fade-in'); observer.observe(el); });
+  .forEach(function(el) { el.classList.add('fade-in'); fadeObs.observe(el); });
