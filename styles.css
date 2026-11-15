@@ -151,3 +151,32 @@ footer {
 @media (max-width: 440px) {
   .cards { grid-template-columns: 1fr; }
 }
+
+/* ── Stack técnico ── */
+.stack-groups { display: flex; flex-direction: column; gap: 22px; margin-top: 28px; }
+.stack-title {
+  font-family: 'JetBrains Mono', monospace; font-size: 10px;
+  letter-spacing: .1em; color: var(--muted); text-transform: uppercase;
+  display: block; margin-bottom: 10px;
+}
+.tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.tag {
+  background: var(--bg); border: 1px solid var(--border);
+  border-radius: 5px; padding: 5px 12px;
+  font-size: 12.5px; font-weight: 500; color: var(--soft);
+  transition: border-color .15s, color .15s;
+}
+.tag:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ── Contact links ── */
+.contact-links { display: flex; flex-direction: column; gap: 10px; margin-top: 28px; max-width: 540px; }
+.clink {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 15px 18px; border: 1px solid var(--border); border-radius: var(--r);
+  text-decoration: none; color: var(--soft); font-size: 14px; font-weight: 500;
+  transition: border-color .15s, color .15s, background .15s;
+}
+.clink:hover { border-color: var(--accent); color: var(--accent); background: color-mix(in srgb, var(--accent) 5%, transparent); }
+.clink-primary { border-color: var(--accent); color: var(--accent); }
+.clink-arrow { font-size: 16px; color: var(--muted); flex-shrink: 0; margin-left: 12px; }
+.clink:hover .clink-arrow { color: var(--accent); }
