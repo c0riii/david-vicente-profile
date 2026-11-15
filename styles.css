@@ -28,6 +28,7 @@ body {
   background: var(--bg); color: var(--text);
   font-family: 'Space Grotesk', sans-serif; line-height: 1.6;
   transition: background .22s, color .22s;
+  overflow-y: scroll; scroll-snap-type: y mandatory;
 }
 
 /* ── Header ── */
@@ -55,7 +56,8 @@ nav a:hover { color: var(--text); }
 .hero {
   display: grid; grid-template-columns: 1fr 1fr; gap: 48px;
   padding: 80px 5vw 72px; border-bottom: 1px solid var(--border);
-  min-height: 400px; align-items: center;
+  min-height: 100vh; align-items: center;
+  scroll-snap-align: start; scroll-snap-stop: always; scroll-margin-top: 52px;
 }
 .eyebrow {
   font-family: 'JetBrains Mono', monospace;
@@ -79,7 +81,11 @@ nav a:hover { color: var(--text); }
 .note { margin-top: 20px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--muted); letter-spacing: .07em; }
 
 /* ── Sections ── */
-.section { border-bottom: 1px solid var(--border); }
+.section {
+  border-bottom: 1px solid var(--border);
+  min-height: 100vh; display: flex; flex-direction: column; justify-content: center;
+  scroll-snap-align: start; scroll-snap-stop: always; scroll-margin-top: 52px;
+}
 .section.alt { background: var(--surface); }
 .section-inner {
   display: grid; grid-template-columns: 200px 1fr;
@@ -113,7 +119,7 @@ nav a:hover { color: var(--text); }
 .job p:last-child { font-size: 14px; line-height: 1.78; color: var(--soft); }
 
 /* ── Cards ── */
-.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 11px; margin-top: 28px; }
+.cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 28px; }
 .cards article {
   background: var(--bg); border: 1px solid var(--border);
   border-radius: var(--r); overflow: hidden;
@@ -140,7 +146,16 @@ footer {
 
 /* ── Mobile ── */
 @media (max-width: 720px) {
-  .hero { grid-template-columns: 1fr; padding: 58px 6vw 50px; min-height: auto; gap: 24px; }
+  body { scroll-snap-type: none; }
+  .hero {
+    grid-template-columns: 1fr; padding: 58px 6vw 50px;
+    min-height: auto; gap: 24px;
+    scroll-snap-align: none; scroll-snap-stop: normal;
+  }
+  .section {
+    min-height: auto; justify-content: flex-start;
+    scroll-snap-align: none; scroll-snap-stop: normal;
+  }
   .section-inner { grid-template-columns: 1fr; gap: 18px; padding: 50px 6vw; }
   .section-label { display: none; }
   .tl-item { grid-template-columns: 1fr; gap: 6px; }
