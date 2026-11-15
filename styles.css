@@ -56,7 +56,7 @@ nav a:hover { color: var(--text); }
 .hero {
   display: grid; grid-template-columns: 1fr 1fr; gap: 48px;
   padding: 80px 5vw 72px; border-bottom: 1px solid var(--border);
-  min-height: 100vh; align-items: center;
+  min-height: 100vh; align-items: center; position: relative;
   scroll-snap-align: start; scroll-snap-stop: always; scroll-margin-top: 52px;
 }
 .eyebrow {
@@ -77,12 +77,18 @@ nav a:hover { color: var(--text); }
 }
 .button:hover { opacity: .86; transform: translateY(-2px); }
 .hero-right { display: flex; flex-direction: column; justify-content: center; }
-.intro { font-size: 15.5px; line-height: 1.82; color: var(--soft); max-width: 420px; }
+.intro { font-size: 17px; line-height: 1.82; color: var(--soft); max-width: 420px; }
 .note { margin-top: 20px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--muted); letter-spacing: .07em; }
+
+/* ── Hero stats ── */
+.hero-stats { display: flex; gap: 28px; margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border); }
+.hstat { display: flex; flex-direction: column; gap: 2px; }
+.hstat strong { font: 700 24px 'Space Grotesk'; color: var(--text); letter-spacing: -.03em; }
+.hstat span { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--muted); letter-spacing: .05em; }
 
 /* ── Sections ── */
 .section {
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--border); position: relative;
   min-height: 100vh; display: flex; flex-direction: column; justify-content: center;
   scroll-snap-align: start; scroll-snap-stop: always; scroll-margin-top: 52px;
 }
@@ -97,7 +103,7 @@ nav a:hover { color: var(--text); }
   font: 700 clamp(26px, 3.2vw, 44px)/.9 'Space Grotesk';
   letter-spacing: -.035em; color: var(--text); margin-bottom: 18px;
 }
-.copy { max-width: 600px; color: var(--soft); line-height: 1.82; font-size: 15px; }
+.copy { max-width: 600px; color: var(--soft); line-height: 1.82; font-size: 16px; }
 
 /* ── Timeline ── */
 .timeline-list { margin-top: 24px; }
@@ -116,7 +122,7 @@ nav a:hover { color: var(--text); }
 .job > span { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .1em; color: var(--accent); }
 .job h3 { font: 600 16.5px 'Space Grotesk'; margin: 8px 0 2px; color: var(--text); }
 .job .company { font-size: 12px; font-weight: 600; color: var(--muted); margin-bottom: 10px; }
-.job p:last-child { font-size: 14px; line-height: 1.78; color: var(--soft); }
+.job p:last-child { font-size: 15px; line-height: 1.78; color: var(--soft); }
 
 /* ── Cards ── */
 .cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 28px; }
@@ -156,6 +162,8 @@ footer {
     min-height: auto; justify-content: flex-start;
     scroll-snap-align: none; scroll-snap-stop: normal;
   }
+  .sec-arr { display: none; }
+  .hero-stats { gap: 18px; }
   .section-inner { grid-template-columns: 1fr; gap: 18px; padding: 50px 6vw; }
   .section-label { display: none; }
   .tl-item { grid-template-columns: 1fr; gap: 6px; }
@@ -166,6 +174,29 @@ footer {
 @media (max-width: 440px) {
   .cards { grid-template-columns: 1fr; }
 }
+
+/* ── Tag icons ── */
+.tag-ico {
+  width: 13px; height: 13px; margin-right: 5px; vertical-align: -2px;
+  filter: grayscale(1) brightness(0) opacity(.55);
+}
+[data-theme="dark"] .tag-ico {
+  filter: grayscale(1) brightness(0) invert(1) opacity(.65);
+}
+
+/* ── Section nav arrows ── */
+.sec-arr {
+  position: absolute; left: 50%; transform: translateX(-50%);
+  display: flex; align-items: center; justify-content: center;
+  width: 38px; height: 38px; border: 1px solid var(--border); border-radius: 50%;
+  color: var(--muted); background: var(--bg); text-decoration: none;
+  transition: color .15s, border-color .15s, transform .2s;
+  z-index: 10;
+}
+.sec-arr svg { width: 16px; height: 16px; }
+.sec-arr--down { bottom: 20px; }
+.sec-arr--up { top: 20px; }
+.sec-arr:hover { color: var(--accent); border-color: var(--accent); transform: translateX(-50%) scale(1.12); }
 
 /* ── Stack técnico ── */
 .stack-groups { display: flex; flex-direction: column; gap: 22px; margin-top: 28px; }
