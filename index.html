@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="Perfil profesional de David Vicente Merino — Data Engineer especializado en GCP y Supply Chain.">
   <title>David Vicente Merino — Data Engineer</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%234f46e5'/><text x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='system-ui,sans-serif' font-weight='700' font-size='13' fill='white'>DV</text></svg>">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -12,14 +13,17 @@
   <header>
     <a class="brand" href="#inicio">DV<span>.</span></a>
     <nav>
-      <a href="#perfil">Perfil</a>
-      <a href="#trayectoria">Formación</a>
-      <a href="#experiencia">Experiencia</a>
+      <a href="#perfil" data-i18n="nav-perfil">Perfil</a>
+      <a href="#trayectoria" data-i18n="nav-formacion">Formación</a>
+      <a href="#experiencia" data-i18n="nav-experiencia">Experiencia</a>
       <a href="#stack">Stack</a>
-      <a href="#certificados">Certificados</a>
-      <a href="#contacto">Contacto</a>
+      <a href="#certificados" data-i18n="nav-certificados">Certificados</a>
+      <a href="#contacto" data-i18n="nav-contacto">Contacto</a>
     </nav>
-    <button class="theme-btn" id="themeBtn" aria-label="Cambiar tema">Auto</button>
+    <div class="header-btns">
+      <button class="theme-btn" id="themeBtn" aria-label="Cambiar tema">Auto</button>
+      <button class="lang-btn"  id="langBtn"  aria-label="Cambiar idioma">EN</button>
+    </div>
   </header>
 
   <main>
@@ -29,15 +33,15 @@
       <div class="hero-left">
         <p class="eyebrow">Data Engineer · AI First</p>
         <h1>David<br>Vicente<br><em>Merino</em></h1>
-        <a class="button" href="#perfil">Ver perfil <span>↓</span></a>
+        <a class="button" href="#perfil" data-i18n="hero-btn">Ver perfil <span>↓</span></a>
       </div>
       <div class="hero-right">
-        <p class="intro">Construyo soluciones de datos para Supply Chain y entornos industriales. Pipelines en GCP, mentalidad AI First y mirada puesta en AI Platform Engineering.</p>
-        <small class="note">Valladolid, España · Abierto a nuevas oportunidades</small>
+        <p class="intro" data-i18n="hero-intro">Construyo soluciones de datos para Supply Chain y entornos industriales. Pipelines en GCP, mentalidad AI First y mirada puesta en AI Platform Engineering.</p>
+        <small class="note" data-i18n="hero-note">Valladolid, España · Abierto a nuevas oportunidades</small>
         <div class="hero-stats">
-          <div class="hstat"><strong>3+</strong><span>años de experiencia</span></div>
-          <div class="hstat"><strong>5</strong><span>empresas / roles</span></div>
-          <div class="hstat"><strong>7</strong><span>certificados</span></div>
+          <div class="hstat"><strong>3+</strong><span data-i18n="hero-stat1">años de experiencia</span></div>
+          <div class="hstat"><strong>5</strong><span data-i18n="hero-stat2">empresas / roles</span></div>
+          <div class="hstat"><strong>7</strong><span data-i18n="hero-stat3">certificados</span></div>
         </div>
       </div>
     </section>
@@ -46,11 +50,11 @@
     <section class="section" id="perfil">
       <div class="section-inner">
         <div class="section-label">
-          <p class="eyebrow">01 — Perfil</p>
+          <p class="eyebrow" data-i18n="sec1-eyebrow">01 — Perfil</p>
         </div>
         <div class="section-body">
-          <h2>Data Engineer.<br>Supply Chain & GCP.</h2>
-          <p class="copy">Ingeniero en Electrónica Industrial y Automática con especialización en datos y cloud. Trabajo en la intersección entre datos, tecnología y operaciones industriales: desde la digitalización de procesos hasta la construcción de pipelines de datos en GCP. Actualmente cursando un Máster en Big Data & Business Intelligence y ampliando formación en Inteligencia Artificial aplicada a plataformas de datos.</p>
+          <h2>Data Engineer.<br>Supply Chain &amp; GCP.</h2>
+          <p class="copy" data-i18n="sec1-copy">Ingeniero en Electrónica Industrial y Automática con especialización en datos y cloud. Trabajo en la intersección entre datos, tecnología y operaciones industriales: desde la digitalización de procesos hasta la construcción de pipelines de datos en GCP. Actualmente cursando un Máster en Big Data &amp; Business Intelligence y ampliando formación en Inteligencia Artificial aplicada a plataformas de datos.</p>
         </div>
       </div>
     </section>
@@ -59,27 +63,27 @@
     <section class="section alt" id="trayectoria">
       <div class="section-inner">
         <div class="section-label">
-          <p class="eyebrow">02 — Formación</p>
+          <p class="eyebrow" data-i18n="sec2-eyebrow">02 — Formación</p>
         </div>
         <div class="section-body">
-          <h2>Formación<br>académica.</h2>
+          <h2 data-i18n="sec2-h2">Formación<br>académica.</h2>
           <div class="timeline-list">
             <article class="tl-item">
               <span class="tl-year">2017 — 2023</span>
               <div>
-                <h3>Grado en Ingeniería en Electrónica Industrial y Automática</h3>
+                <h3 data-i18n="tl1-h3">Grado en Ingeniería en Electrónica Industrial y Automática</h3>
                 <p>Universidad de Valladolid</p>
               </div>
             </article>
             <article class="tl-item">
               <span class="tl-year">2024 — actualidad</span>
               <div>
-                <h3>Máster en Big Data &amp; Business Intelligence</h3>
-                <p>Universidad de Valladolid · En curso</p>
+                <h3 data-i18n="tl2-h3">Máster en Big Data &amp; Business Intelligence</h3>
+                <p data-i18n="tl2-p">Universidad de Valladolid · En curso</p>
               </div>
             </article>
           </div>
-          <p class="lang-tag">Español nativo · Inglés C1 · Francés B1</p>
+          <p class="lang-tag" data-i18n="lang-tag">Español nativo · Inglés C1 · Francés B1</p>
         </div>
       </div>
     </section>
@@ -88,40 +92,40 @@
     <section class="section" id="experiencia">
       <div class="section-inner">
         <div class="section-label">
-          <p class="eyebrow">03 — Experiencia</p>
+          <p class="eyebrow" data-i18n="sec3-eyebrow">03 — Experiencia</p>
         </div>
         <div class="section-body">
-          <h2>Experiencia<br>profesional.</h2>
+          <h2 data-i18n="sec3-h2">Experiencia<br>profesional.</h2>
           <div class="jobs">
             <article class="job">
               <span>FEB 2026 — ACTUALIDAD</span>
               <h3>Data Engineer · Supply Chain Data Excellence</h3>
               <p class="company">Supply Chain</p>
-              <p>Desarrollo y mantenimiento de pipelines en GCP con BigQuery, Cloud Storage y Dataform. Diseño modelos Bronze/Silver/Gold, transformaciones SQL y controles de calidad. Optimizo consultas mediante particionado y clustering para mejorar rendimiento y eficiencia de costes, integrando datos maestros y soluciones SAP IBP/BTP con equipos funcionales.</p>
+              <p data-i18n="job1-desc">Desarrollo y mantenimiento de pipelines en GCP con BigQuery, Cloud Storage y Dataform. Diseño modelos Bronze/Silver/Gold, transformaciones SQL y controles de calidad. Optimizo consultas mediante particionado y clustering para mejorar rendimiento y eficiencia de costes, integrando datos maestros y soluciones SAP IBP/BTP con equipos funcionales.</p>
             </article>
             <article class="job">
               <span>SEP 2024 — FEB 2026</span>
               <h3>Data Analyst · Supply Chain</h3>
               <p class="company">Renault Group · HORSE</p>
-              <p>Análisis de datos con Power BI, Looker Studio y TIBCO Spotfire; mejora de documentación de maquinaria y migración de referencias de almacén en SAP S/4HANA. Colaboré con Google en el desarrollo de un agente de IA para mantenimiento de fábrica.</p>
+              <p data-i18n="job2-desc">Análisis de datos con Power BI, Looker Studio y TIBCO Spotfire; mejora de documentación de maquinaria y migración de referencias de almacén en SAP S/4HANA. Colaboré con Google en el desarrollo de un agente de IA para mantenimiento de fábrica.</p>
             </article>
             <article class="job">
               <span>SEP 2023 — AGO 2024</span>
-              <h3>Ingeniería de Procesos · Data &amp; Digital</h3>
+              <h3 data-i18n="job3-h3">Ingeniería de Procesos · Data &amp; Digital</h3>
               <p class="company">Local Supply Chain P.I. · HORSE</p>
-              <p>Digitalicé procesos de Supply Chain mediante aplicaciones Power Apps y automatizaciones en Python y PowerShell. Automaticé informes con Spotfire y VBA, ahorrando cinco horas semanales, y gestioné incidencias técnicas con un SLA de resolución del 85 %.</p>
+              <p data-i18n="job3-desc">Digitalicé procesos de Supply Chain mediante aplicaciones Power Apps y automatizaciones en Python y PowerShell. Automaticé informes con Spotfire y VBA, ahorrando cinco horas semanales, y gestioné incidencias técnicas con un SLA de resolución del 85 %.</p>
             </article>
             <article class="job">
               <span>ENE 2023 — SEP 2023</span>
-              <h3>Departamento de Calidad · Becario</h3>
+              <h3 data-i18n="job4-h3">Departamento de Calidad · Becario</h3>
               <p class="company">SEGULA Technologies · HORSE</p>
-              <p>Desarrollé scripts Python para analizar datos de producción y detectar desviaciones de calidad un 30 % más rápido. También trabajé con TIBCO Spotfire y creé herramientas internas con Power Apps y VBA para estandarizar el cumplimiento de normativas.</p>
+              <p data-i18n="job4-desc">Desarrollé scripts Python para analizar datos de producción y detectar desviaciones de calidad un 30 % más rápido. También trabajé con TIBCO Spotfire y creé herramientas internas con Power Apps y VBA para estandarizar el cumplimiento de normativas.</p>
             </article>
             <article class="job">
               <span>JUL 2021 — OCT 2021</span>
-              <h3>Departamento de Ingeniería · Becario</h3>
-              <p class="company">Empresa especializada en montaje e ingeniería eléctrica</p>
-              <p>Desarrollo de un proyecto eléctrico real para una comisaría de policía en Valladolid.</p>
+              <h3 data-i18n="job5-h3">Departamento de Ingeniería · Prácticas universitarias</h3>
+              <p class="company" data-i18n="job5-company">Empresa especializada en montaje e ingeniería eléctrica</p>
+              <p data-i18n="job5-desc">Desarrollo de un proyecto eléctrico real para una comisaría de policía en Valladolid.</p>
             </article>
           </div>
         </div>
@@ -132,13 +136,13 @@
     <section class="section alt" id="stack">
       <div class="section-inner">
         <div class="section-label">
-          <p class="eyebrow">04 — Stack técnico</p>
+          <p class="eyebrow" data-i18n="sec4-eyebrow">04 — Stack técnico</p>
         </div>
         <div class="section-body">
-          <h2>Tecnologías<br>y herramientas.</h2>
+          <h2 data-i18n="sec4-h2">Tecnologías<br>y herramientas.</h2>
           <div class="stack-groups">
             <div class="stack-group">
-              <span class="stack-title">Cloud &amp; Data Platform</span>
+              <span class="stack-title" data-i18n="st1">Cloud &amp; Data Platform</span>
               <div class="tags">
                 <span class="tag"><img class="tag-ico" src="https://cdn.simpleicons.org/googlecloud" alt="">GCP</span>
                 <span class="tag"><img class="tag-ico" src="https://cdn.simpleicons.org/googlebigquery" alt="">BigQuery</span>
@@ -148,7 +152,7 @@
               </div>
             </div>
             <div class="stack-group">
-              <span class="stack-title">Lenguajes</span>
+              <span class="stack-title" data-i18n="st2">Lenguajes</span>
               <div class="tags">
                 <span class="tag"><img class="tag-ico" src="https://cdn.simpleicons.org/python" alt="">Python</span>
                 <span class="tag"><img class="tag-ico" src="https://cdn.simpleicons.org/postgresql" alt="">SQL</span>
@@ -157,7 +161,7 @@
               </div>
             </div>
             <div class="stack-group">
-              <span class="stack-title">Visualización</span>
+              <span class="stack-title" data-i18n="st3">Visualización</span>
               <div class="tags">
                 <span class="tag"><img class="tag-ico" src="https://cdn.simpleicons.org/powerbi" alt="">Power BI</span>
                 <span class="tag"><img class="tag-ico" src="https://cdn.simpleicons.org/looker" alt="">Looker Studio</span>
@@ -165,7 +169,7 @@
               </div>
             </div>
             <div class="stack-group">
-              <span class="stack-title">ERP &amp; Integración</span>
+              <span class="stack-title" data-i18n="st4">ERP &amp; Integración</span>
               <div class="tags">
                 <span class="tag"><img class="tag-ico" src="https://cdn.simpleicons.org/sap" alt="">SAP S/4HANA</span>
                 <span class="tag"><img class="tag-ico" src="https://cdn.simpleicons.org/sap" alt="">SAP IBP</span>
@@ -173,14 +177,14 @@
               </div>
             </div>
             <div class="stack-group">
-              <span class="stack-title">Low-code &amp; Automatización</span>
+              <span class="stack-title" data-i18n="st5">Low-code &amp; Automatización</span>
               <div class="tags">
                 <span class="tag"><img class="tag-ico" src="https://cdn.simpleicons.org/microsoftpowerapps" alt="">Power Apps</span>
                 <span class="tag"><img class="tag-ico" src="https://cdn.simpleicons.org/powerautomate" alt="">Power Automate</span>
               </div>
             </div>
             <div class="stack-group">
-              <span class="stack-title">Otros</span>
+              <span class="stack-title" data-i18n="st6">Otros</span>
               <div class="tags">
                 <span class="tag"><img class="tag-ico" src="https://cdn.simpleicons.org/git" alt="">Git</span>
                 <span class="tag"><img class="tag-ico" src="https://cdn.simpleicons.org/docker" alt="">Docker</span>
@@ -196,17 +200,17 @@
     <section class="section" id="certificados">
       <div class="section-inner">
         <div class="section-label">
-          <p class="eyebrow">05 — Certificados</p>
+          <p class="eyebrow" data-i18n="sec5-eyebrow">05 — Certificados</p>
         </div>
         <div class="section-body">
-          <h2>Certificados<br>y formación continua.</h2>
-          <p class="copy">Formación en análisis de datos, programación e inteligencia artificial.</p>
+          <h2 data-i18n="sec5-h2">Certificados<br>y formación continua.</h2>
+          <p class="copy" data-i18n="sec5-copy">Formación en análisis de datos, programación e inteligencia artificial.</p>
           <div class="cards">
             <article>
               <a href="assets/certificados/aprende-sql-midudev.pdf" target="_blank" rel="noopener">
                 <img src="assets/certificados/aprende-sql-midudev.png" alt="Certificado Aprende SQL — midudev">
               </a>
-              <div><span>MIDUDEV · 15 NOV 2026</span><h3>Aprende SQL</h3></div>
+              <div><span>MIDUDEV · 15 NOV 2026</span><h3 data-i18n="cert1-h3">Aprende SQL</h3></div>
             </article>
             <article>
               <img src="assets/certificados/intro-sql.png" alt="Certificado Kaggle Intro to SQL">
@@ -222,22 +226,22 @@
             </article>
             <article>
               <img src="assets/certificados/ia-workflow-infojobs-bigschool.jpg" alt="Certificado InfoJobs &amp; BIG school — IA Workflow">
-              <div><span>INFOJOBS · BIG SCHOOL · 20 NOV 2025</span><h3>Iniciación a los flujos de trabajo con IA</h3></div>
+              <div><span>INFOJOBS · BIG SCHOOL · 20 NOV 2025</span><h3 data-i18n="cert5-h3">Iniciación a los flujos de trabajo con IA</h3></div>
             </article>
             <article>
               <a href="assets/certificados/domina-ia-gemini.pdf" target="_blank" rel="noopener">
                 <img src="assets/certificados/domina-ia-gemini.png" alt="Certificado Santander Open Academy — Domina la IA con Gemini">
               </a>
-              <div><span>SANTANDER OPEN ACADEMY · 26 NOV 2025</span><h3>Domina la IA con Gemini</h3></div>
+              <div><span>SANTANDER OPEN ACADEMY · 26 NOV 2025</span><h3 data-i18n="cert6-h3">Domina la IA con Gemini</h3></div>
             </article>
             <article>
               <a href="assets/certificados/prompting-responsable-ia.pdf" target="_blank" rel="noopener">
                 <img src="assets/certificados/prompting-responsable-ia.png" alt="Certificado Santander Open Academy — Prompting responsable">
               </a>
-              <div><span>SANTANDER OPEN ACADEMY · 27 NOV 2025</span><h3>Prompting responsable: maximiza la IA en tu negocio</h3></div>
+              <div><span>SANTANDER OPEN ACADEMY · 27 NOV 2025</span><h3 data-i18n="cert7-h3">Prompting responsable: maximiza la IA en tu negocio</h3></div>
             </article>
           </div>
-          <p class="privacy">Los documentos originales con datos personales no se publican aquí. Las imágenes de certificados se muestran como referencia.</p>
+          <p class="privacy" data-i18n="privacy">Los documentos originales con datos personales no se publican aquí. Las imágenes de certificados se muestran como referencia.</p>
         </div>
       </div>
     </section>
@@ -246,11 +250,11 @@
     <section class="section alt" id="contacto">
       <div class="section-inner">
         <div class="section-label">
-          <p class="eyebrow">06 — Contacto</p>
+          <p class="eyebrow" data-i18n="sec6-eyebrow">06 — Contacto</p>
         </div>
         <div class="section-body">
-          <h2>Contacto.</h2>
-          <p class="copy">Abierto a nuevas oportunidades en Data Engineering, Analytics e Ingeniería de IA. Puedes escribirme directamente por LinkedIn o por correo electrónico.</p>
+          <h2 data-i18n="sec6-h2">Contacto.</h2>
+          <p class="copy" data-i18n="sec6-copy">Abierto a nuevas oportunidades en Data Engineering, Analytics e Ingeniería de IA. Puedes escribirme directamente por LinkedIn o por correo electrónico.</p>
           <div class="contact-links">
             <a class="clink clink-primary" href="https://www.linkedin.com/in/davidvicente99" target="_blank" rel="noopener">
               <span>LinkedIn — linkedin.com/in/davidvicente99</span>
@@ -269,7 +273,7 @@
 
   <footer>
     <span>© 2026 David Vicente Merino</span>
-    <span>Data Engineer · Valladolid, España</span>
+    <span data-i18n="footer-role">Data Engineer · Valladolid, España</span>
   </footer>
 
   <!-- Flechas de navegación fijas en pantalla -->

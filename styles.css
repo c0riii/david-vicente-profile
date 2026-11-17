@@ -45,12 +45,13 @@ header {
 nav { display: flex; gap: 22px; }
 nav a { color: var(--muted); text-decoration: none; font-size: 12.5px; font-weight: 500; transition: color .15s; }
 nav a:hover { color: var(--text); }
-.theme-btn {
+.header-btns { display: flex; gap: 6px; }
+.theme-btn, .lang-btn {
   background: var(--surface); border: 1px solid var(--border); border-radius: 6px;
   padding: 5px 12px; cursor: pointer; font: 500 11px 'JetBrains Mono'; color: var(--muted);
   letter-spacing: .06em; transition: color .15s, border-color .15s;
 }
-.theme-btn:hover { color: var(--accent); border-color: var(--accent); }
+.theme-btn:hover, .lang-btn:hover { color: var(--accent); border-color: var(--accent); }
 
 /* ── Hero ── */
 .hero {
