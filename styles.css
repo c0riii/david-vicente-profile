@@ -115,6 +115,8 @@ nav a:hover { color: var(--text); }
 .tl-year { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .08em; color: var(--accent); padding-top: 3px; }
 .tl-item h3 { font-size: 15.5px; font-weight: 600; margin-bottom: 4px; color: var(--text); }
 .tl-item p { font-size: 13px; color: var(--muted); }
+.master-skills { margin-top: 10px; padding-left: 16px; display: flex; flex-direction: column; gap: 4px; }
+.master-skills li { font-size: 12.5px; color: var(--soft); list-style: disc; }
 .lang-tag { margin-top: 22px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--muted); border-top: 1px solid var(--border); padding-top: 20px; letter-spacing: .04em; }
 
 /* ── Jobs ── */
